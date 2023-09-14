@@ -7,7 +7,7 @@ function index() {
   return React.createElement("div", {
               className: "flex w-screen h-screen justify-center items-center",
               style: {
-                backgroundImage: "url(\"src/assets/background.png\")"
+                backgroundImage: "url(\"./background.png\")"
               }
             }, React.createElement("div", {
                   className: "flex bg-pink-200 border-2 p-8 border-pink-200 rounded flex-row "
@@ -16,7 +16,8 @@ function index() {
                     }, React.createElement("div", {
                           className: "absolute  h-16 w-12 "
                         }, React.createElement("img", {
-                              src: "src/assets/paw.png"
+                              alt: "Loading...",
+                              src: "./paw.png"
                             })), React.createElement("div", {
                           className: "space-y-6 text-center"
                         }, React.createElement("p", {

@@ -8,7 +8,14 @@ type images = {default: string}
 let dogImages = [dog1, dog2, dog3, dog4, dog5]
 
 let dogsName = ["Rex", "Alfred", "Clifford", "Betsy", "Minnie"]
-
+let ownerName = ["Dariusz Zwane", "Jane Lis", "Cristina Navarro", "Joanna Usman", "Yan Ali"]
+let dateList = [
+  "Thursday 16:31",
+  "Wednesday 20:55",
+  "Thursday 10:16",
+  "Thursday 04:39",
+  "Wednesday 22:35",
+]
 let generateData = () => {
   let newData = Utils.faker.date.recent()
   Utils.dayjs(newData).format("dddd HH:mm")
@@ -22,12 +29,12 @@ type data = {
 }
 
 let nameList = () => {
-  dogsName->Belt_Array.map(dog => {
+  dogsName->Belt_Array.mapWithIndex((index, dog) => {
     {
       dog,
       // image: ,
-      owner: Utils.faker.person.fullName(),
-      schedule: generateData(),
+      owner: ownerName[index],
+      schedule: dateList[index],
     }
   })
 }

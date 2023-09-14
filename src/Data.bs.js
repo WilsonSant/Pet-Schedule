@@ -2,6 +2,7 @@
 
 import * as Dayjs from "dayjs";
 import * as Belt_Array from "rescript/lib/es6/belt_Array.js";
+import * as Caml_array from "rescript/lib/es6/caml_array.js";
 import * as Faker from "@faker-js/faker";
 import * as Dog1Jpg from "./assets/dog1.jpg";
 import * as Dog2Jpg from "./assets/dog2.jpg";
@@ -35,17 +36,33 @@ var dogsName = [
   "Minnie"
 ];
 
+var ownerName = [
+  "Dariusz Zwane",
+  "Jane Lis",
+  "Cristina Navarro",
+  "Joanna Usman",
+  "Yan Ali"
+];
+
+var dateList = [
+  "Thursday 16:31",
+  "Wednesday 20:55",
+  "Thursday 10:16",
+  "Thursday 04:39",
+  "Wednesday 22:35"
+];
+
 function generateData() {
   var newData = Faker.faker.date.recent(undefined);
   return Dayjs(newData).format("dddd HH:mm");
 }
 
 function nameList() {
-  return Belt_Array.map(dogsName, (function (dog) {
+  return Belt_Array.mapWithIndex(dogsName, (function (index, dog) {
                 return {
                         dog: dog,
-                        owner: Faker.faker.person.fullName(undefined),
-                        schedule: generateData(undefined)
+                        owner: Caml_array.get(ownerName, index),
+                        schedule: Caml_array.get(dateList, index)
                       };
               }));
 }
@@ -58,6 +75,8 @@ export {
   dog5 ,
   dogImages ,
   dogsName ,
+  ownerName ,
+  dateList ,
   generateData ,
   nameList ,
 }
