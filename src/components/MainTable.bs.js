@@ -47,7 +47,7 @@ function MainTable(props) {
                                                                       height: 56
                                                                     }
                                                                   }), React.createElement("p", {
-                                                                    className: "text-2xl font-bold text-center font-serif"
+                                                                    className: " font-bold text-center font-serif"
                                                                   }, item.dog)))
                                                     }),
                                                 React.createElement(TableCell, {

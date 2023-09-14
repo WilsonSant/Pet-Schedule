@@ -20,7 +20,7 @@ let make = () => {
                   <Avatar
                     sx={{height: 56, width: 56}} alt="Dog Photo" src={Data.dogImages[index].default}
                   />
-                 <p className="text-2xl font-bold text-center font-serif"> {React.string(item.dog)}</p>
+                 <p className=" font-bold text-center font-serif"> {React.string(item.dog)}</p>
                 </React.Fragment>
               </TableCell>
               <TableCell> {React.string(item.owner)} </TableCell>
