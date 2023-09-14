@@ -1,0 +1,53 @@
+rescript = 1
+g_finger := E:\proj\restable\node_modules\@rescript\react\lib\ocaml\install.stamp
+rule astj
+  command = "E:\proj\restable\node_modules\.pnpm\rescript@11.0.0-rc.3\node_modules\rescript\win32\bsc.exe"  -bs-v 11.0.0-rc.3 -bs-jsx 4 -bs-jsx-mode classic -uncurried  -absname -bs-ast -o $out $i
+o src\Data.ast : astj ..\..\src\Data.res
+rule deps
+  command = "E:\proj\restable\node_modules\.pnpm\rescript@11.0.0-rc.3\node_modules\rescript\win32\bsb_helper.exe" -hash af817f6c8f036d436e5806357d85db99 $in
+  restat = 1
+o src\Data.d : deps src\Data.ast
+rule mij
+  command = "E:\proj\restable\node_modules\.pnpm\rescript@11.0.0-rc.3\node_modules\rescript\win32\bsc.exe" -I "src\assets" -I "src\bidings\table" -I "src\bidings\utils" -I "src\bidings" -I "src\components" -I src -I "E:\proj\restable\node_modules\@rescript\react\lib\ocaml"   -uncurried -bs-package-name restable -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src\Data.cmj src\Data.cmi ..\..\src\Data.bs.js : mij src\Data.ast
+o src\Index.ast : astj ..\..\src\Index.res
+o src\Index.d : deps src\Index.ast
+o src\Index.cmj src\Index.cmi ..\..\src\Index.bs.js : mij src\Index.ast
+o src\components\MainTable.ast : astj ..\..\src\components\MainTable.res
+o src\components\MainTable.d : deps src\components\MainTable.ast
+o src\components\MainTable.cmj src\components\MainTable.cmi ..\..\src\components\MainTable.bs.js : mij src\components\MainTable.ast
+o src\bidings\Paper.ast : astj ..\..\src\bidings\Paper.res
+o src\bidings\Paper.d : deps src\bidings\Paper.ast
+o src\bidings\Paper.cmj src\bidings\Paper.cmi ..\..\src\bidings\Paper.bs.js : mij src\bidings\Paper.ast
+o src\bidings\Utils.ast : astj ..\..\src\bidings\Utils.res
+o src\bidings\Utils.d : deps src\bidings\Utils.ast
+o src\bidings\Utils.cmj src\bidings\Utils.cmi ..\..\src\bidings\Utils.bs.js : mij src\bidings\Utils.ast
+o src\bidings\Avatar.ast : astj ..\..\src\bidings\Avatar.res
+o src\bidings\Avatar.d : deps src\bidings\Avatar.ast
+o src\bidings\Avatar.cmj src\bidings\Avatar.cmi ..\..\src\bidings\Avatar.bs.js : mij src\bidings\Avatar.ast
+o src\bidings\utils\Day.ast : astj ..\..\src\bidings\utils\Day.res
+o src\bidings\utils\Day.d : deps src\bidings\utils\Day.ast
+o src\bidings\utils\Day.cmj src\bidings\utils\Day.cmi ..\..\src\bidings\utils\Day.bs.js : mij src\bidings\utils\Day.ast
+o src\bidings\utils\Faker.ast : astj ..\..\src\bidings\utils\Faker.res
+o src\bidings\utils\Faker.d : deps src\bidings\utils\Faker.ast
+o src\bidings\utils\Faker.cmj src\bidings\utils\Faker.cmi ..\..\src\bidings\utils\Faker.bs.js : mij src\bidings\utils\Faker.ast
+o src\bidings\table\Table.ast : astj ..\..\src\bidings\table\Table.res
+o src\bidings\table\Table.d : deps src\bidings\table\Table.ast
+o src\bidings\table\Table.cmj src\bidings\table\Table.cmi ..\..\src\bidings\table\Table.bs.js : mij src\bidings\table\Table.ast
+o src\bidings\table\TableRow.ast : astj ..\..\src\bidings\table\TableRow.res
+o src\bidings\table\TableRow.d : deps src\bidings\table\TableRow.ast
+o src\bidings\table\TableRow.cmj src\bidings\table\TableRow.cmi ..\..\src\bidings\table\TableRow.bs.js : mij src\bidings\table\TableRow.ast
+o src\bidings\table\TableBody.ast : astj ..\..\src\bidings\table\TableBody.res
+o src\bidings\table\TableBody.d : deps src\bidings\table\TableBody.ast
+o src\bidings\table\TableBody.cmj src\bidings\table\TableBody.cmi ..\..\src\bidings\table\TableBody.bs.js : mij src\bidings\table\TableBody.ast
+o src\bidings\table\TableCell.ast : astj ..\..\src\bidings\table\TableCell.res
+o src\bidings\table\TableCell.d : deps src\bidings\table\TableCell.ast
+o src\bidings\table\TableCell.cmj src\bidings\table\TableCell.cmi ..\..\src\bidings\table\TableCell.bs.js : mij src\bidings\table\TableCell.ast
+o src\bidings\table\TableHead.ast : astj ..\..\src\bidings\table\TableHead.res
+o src\bidings\table\TableHead.d : deps src\bidings\table\TableHead.ast
+o src\bidings\table\TableHead.cmj src\bidings\table\TableHead.cmi ..\..\src\bidings\table\TableHead.bs.js : mij src\bidings\table\TableHead.ast
+o src\bidings\table\TableContainer.ast : astj ..\..\src\bidings\table\TableContainer.res
+o src\bidings\table\TableContainer.d : deps src\bidings\table\TableContainer.ast
+o src\bidings\table\TableContainer.cmj src\bidings\table\TableContainer.cmi ..\..\src\bidings\table\TableContainer.bs.js : mij src\bidings\table\TableContainer.ast

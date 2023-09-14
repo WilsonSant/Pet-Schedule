@@ -1,0 +1,62 @@
+rescript = 1
+rule cp
+  command = cmd.exe /C copy /Y $i $out >NUL
+rule touch
+ command = cmd.exe /C type nul >>$out & copy $out+,, >NUL
+o Data.cmi : cp ..\bs\src\Data.cmi
+o Data.cmj : cp ..\bs\src\Data.cmj
+o Data.cmt : cp ..\bs\src\Data.cmt
+o Data.res : cp ..\..\src\Data.res
+o Index.cmi : cp ..\bs\src\Index.cmi
+o Index.cmj : cp ..\bs\src\Index.cmj
+o Index.cmt : cp ..\bs\src\Index.cmt
+o Index.res : cp ..\..\src\Index.res
+o MainTable.cmi : cp ..\bs\src\components\MainTable.cmi
+o MainTable.cmj : cp ..\bs\src\components\MainTable.cmj
+o MainTable.cmt : cp ..\bs\src\components\MainTable.cmt
+o MainTable.res : cp ..\..\src\components\MainTable.res
+o Paper.cmi : cp ..\bs\src\bidings\Paper.cmi
+o Paper.cmj : cp ..\bs\src\bidings\Paper.cmj
+o Paper.cmt : cp ..\bs\src\bidings\Paper.cmt
+o Paper.res : cp ..\..\src\bidings\Paper.res
+o Utils.cmi : cp ..\bs\src\bidings\Utils.cmi
+o Utils.cmj : cp ..\bs\src\bidings\Utils.cmj
+o Utils.cmt : cp ..\bs\src\bidings\Utils.cmt
+o Utils.res : cp ..\..\src\bidings\Utils.res
+o Avatar.cmi : cp ..\bs\src\bidings\Avatar.cmi
+o Avatar.cmj : cp ..\bs\src\bidings\Avatar.cmj
+o Avatar.cmt : cp ..\bs\src\bidings\Avatar.cmt
+o Avatar.res : cp ..\..\src\bidings\Avatar.res
+o Day.cmi : cp ..\bs\src\bidings\utils\Day.cmi
+o Day.cmj : cp ..\bs\src\bidings\utils\Day.cmj
+o Day.cmt : cp ..\bs\src\bidings\utils\Day.cmt
+o Day.res : cp ..\..\src\bidings\utils\Day.res
+o Faker.cmi : cp ..\bs\src\bidings\utils\Faker.cmi
+o Faker.cmj : cp ..\bs\src\bidings\utils\Faker.cmj
+o Faker.cmt : cp ..\bs\src\bidings\utils\Faker.cmt
+o Faker.res : cp ..\..\src\bidings\utils\Faker.res
+o Table.cmi : cp ..\bs\src\bidings\table\Table.cmi
+o Table.cmj : cp ..\bs\src\bidings\table\Table.cmj
+o Table.cmt : cp ..\bs\src\bidings\table\Table.cmt
+o Table.res : cp ..\..\src\bidings\table\Table.res
+o TableRow.cmi : cp ..\bs\src\bidings\table\TableRow.cmi
+o TableRow.cmj : cp ..\bs\src\bidings\table\TableRow.cmj
+o TableRow.cmt : cp ..\bs\src\bidings\table\TableRow.cmt
+o TableRow.res : cp ..\..\src\bidings\table\TableRow.res
+o TableBody.cmi : cp ..\bs\src\bidings\table\TableBody.cmi
+o TableBody.cmj : cp ..\bs\src\bidings\table\TableBody.cmj
+o TableBody.cmt : cp ..\bs\src\bidings\table\TableBody.cmt
+o TableBody.res : cp ..\..\src\bidings\table\TableBody.res
+o TableCell.cmi : cp ..\bs\src\bidings\table\TableCell.cmi
+o TableCell.cmj : cp ..\bs\src\bidings\table\TableCell.cmj
+o TableCell.cmt : cp ..\bs\src\bidings\table\TableCell.cmt
+o TableCell.res : cp ..\..\src\bidings\table\TableCell.res
+o TableHead.cmi : cp ..\bs\src\bidings\table\TableHead.cmi
+o TableHead.cmj : cp ..\bs\src\bidings\table\TableHead.cmj
+o TableHead.cmt : cp ..\bs\src\bidings\table\TableHead.cmt
+o TableHead.res : cp ..\..\src\bidings\table\TableHead.res
+o TableContainer.cmi : cp ..\bs\src\bidings\table\TableContainer.cmi
+o TableContainer.cmj : cp ..\bs\src\bidings\table\TableContainer.cmj
+o TableContainer.cmt : cp ..\bs\src\bidings\table\TableContainer.cmt
+o TableContainer.res : cp ..\..\src\bidings\table\TableContainer.res
+build install.stamp : touch Data.cmi Data.cmj Index.cmi Index.cmj MainTable.cmi MainTable.cmj Paper.cmi Paper.cmj Utils.cmi Utils.cmj Avatar.cmi Avatar.cmj Day.cmi Day.cmj Faker.cmi Faker.cmj Table.cmi Table.cmj TableRow.cmi TableRow.cmj TableBody.cmi TableBody.cmj TableCell.cmi TableCell.cmj TableHead.cmi TableHead.cmj TableContainer.cmi TableContainer.cmj 
