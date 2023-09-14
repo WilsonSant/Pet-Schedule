@@ -13,6 +13,6 @@ A very simple app to me try out React with Rescript
 
 ## How to run it
 
-Clone this repo and run a pnpm install and pnpm dev
+Clone this repo and run a pnpm install and pnpm start
 
 Ensure you have Node at least 18 and pnpm 8

@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "tailwind": "pnpm dlx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "res:build": "rescript",
-    "res:dev": "rescript build -w"
+    "res:dev": "rescript build -w",
+    "start": "pnpm dlx tailwindcss -i ./src/index.css -o ./dist/output.css && pnpm res:build && pnpm dev "
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
